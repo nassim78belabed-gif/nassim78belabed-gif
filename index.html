@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nassim Belabed · Portfolio GEII</title>
+<meta name="description" content="Portfolio de Nassim Belabed, étudiant en 2e année de BUT GEII (Électronique et systèmes embarqués) à l'IUT de Vélizy-Rambouillet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#accueil">Nassim<span>.</span>Belabed</a>
+    <nav id="nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#academiques">Projets académiques</a>
+      <a href="#perso">Projets personnels</a>
+      <a href="#experience">Expérience</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact et réseaux</a>
+    </nav>
+    <button id="theme" title="Changer de thème" aria-label="Changer de thème">◐</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= ACCUEIL ================= -->
+<section class="page" data-page="accueil">
+  <div class="hero">
+    <div class="photo">
+      <!-- Remplace par ta photo : <img src="assets/img/photo.jpg" alt="Nassim Belabed"> -->
+      <span class="initials">NB</span>
+      <span class="todo">ta photo (assets/img/photo.jpg)</span>
+    </div>
+    <div>
+      <span class="status">Étudiant en 2e année de BUT GEII · IUT de Vélizy-Rambouillet</span>
+      <h1>Nassim Belabed</h1>
+      <p>Je suis en 2e année de BUT Génie Électrique et Informatique Industrielle, parcours <strong>Électronique et systèmes embarqués</strong>, à l'IUT de Vélizy-Rambouillet (Université Paris-Saclay).</p>
+      <p>Ce qui me plaît, c'est le matériel : concevoir une carte, la fabriquer et la voir fonctionner. Je fabrique des PCB et des pièces imprimées en 3D au FabLab de l'IUT, et je mène des projets personnels autour de l'ESP32, comme un lecteur MP3 façon iPod. En parallèle, je me forme en autodidacte à l'intelligence artificielle (agents IA, LLM).</p>
+      <p>De janvier à avril 2027, je pars en échange au <strong>Cégep Édouard-Montpetit</strong> (Longueuil, Québec). À mon retour, je recherche un <strong>stage de 8 semaines minimum à partir de mi-juin 2027</strong>, puis une <strong>alternance en BUT 3 dès septembre 2027</strong>, en électronique, systèmes embarqués ou IA.</p>
+      <div class="cta">
+        <a class="btn primary" href="#academiques">Voir mes projets</a>
+        <a class="btn" href="assets/cv-nassim-belabed.pdf" download>Télécharger mon CV</a>
+        <a class="btn" href="#contact">Me contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>1er prix</b><span>Escape Race 2026, IUT de Vélizy</span></div>
+    <div class="stat"><b>7e / 38</b><span>Rencontres Robotiques de Cachan 2026</span></div>
+    <div class="stat"><b>3e prix</b><span>Olympiades des Sciences de l'Ingénieur, Académie de Versailles</span></div>
+  </div>
+
+  <p class="group-title">Projets à la une</p>
+  <div class="grid">
+    <a class="card" href="#p-cachan">
+      <div class="thumb"><span class="glyph">🏁</span></div>
+      <div class="body"><h3>L'oscillo bot</h3><p>Robot suiveur de ligne autonome pour les Rencontres Robotiques de Cachan.</p>
+      <div class="tags"><span class="tag award">7e / 38</span><span class="tag">Arduino</span><span class="tag">PID</span></div></div>
+    </a>
+    <a class="card" href="#p-ipod">
+      <div class="thumb"><img src="assets/img/ipod-boitier.jpg" alt="Boîtier 3D du lecteur iPod OK Computer Edition"></div>
+      <div class="body"><h3>iPod OK Computer Edition</h3><p>Lecteur MP3 façon iPod Classic sur ESP32-S3 : firmware, PCB et boîtier.</p>
+      <div class="tags"><span class="tag">ESP32-S3</span><span class="tag">KiCad</span><span class="tag">I2S</span></div></div>
+    </a>
+    <a class="card" href="#p-domostore">
+      <div class="thumb"><span class="glyph">🏠</span></div>
+      <div class="body"><h3>Domostore</h3><p>Volet roulant connecté qui s'ouvre et se ferme selon la luminosité.</p>
+      <div class="tags"><span class="tag award">3e prix</span><span class="tag">ESP32</span><span class="tag">Home Assistant</span></div></div>
+    </a>
+  </div>
+</section>
+
+<!-- ================= PROJETS ACADÉMIQUES ================= -->
+<section class="page" data-page="academiques">
+  <h2 class="title">Projets académiques</h2>
+  <p class="lead">Les SAÉ (situations d'apprentissage et d'évaluation) que j'ai réalisées en BUT 1 et en BUT 2. Cliquez sur un projet pour voir sa fiche complète.</p>
+
+  <p class="group-title">BUT 2 · Semestre 3</p>
+  <div class="grid">
+    <a class="card" href="#p-ultrason">
+      <div class="thumb"><span class="glyph">📡</span></div>
+      <div class="body"><h3>Mesure de distance par ultrasons</h3><p>SAÉ 3.02 : chaîne d'acquisition complète autour d'un émetteur-récepteur ultrasonore à 40 kHz.</p>
+      <div class="tags"><span class="tag">NE555</span><span class="tag">KiCad</span><span class="tag">Acquisition</span></div></div>
+    </a>
+  </div>
+
+  <p class="group-title">BUT 1 · Semestre 2</p>
+  <div class="grid">
+    <a class="card" href="#p-cachan">
+      <div class="thumb"><span class="glyph">🏁</span></div>
+      <div class="body"><h3>L'oscillo bot · Concours de Cachan</h3><p>Robot suiveur de ligne en équipe de 3, régulation PID et séquenceur de missions.</p>
+      <div class="tags"><span class="tag award">7e / 38</span><span class="tag">Arduino Mega</span><span class="tag">PID</span></div></div>
+    </a>
+    <a class="card" href="#p-fpga">
+      <div class="thumb"><span class="glyph">⚙️</span></div>
+      <div class="body"><h3>Commande d'un moteur par FPGA</h3><p>SAÉ 2.01 : variation de vitesse d'un moteur à courant continu en VHDL sur Basys 2.</p>
+      <div class="tags"><span class="tag">VHDL</span><span class="tag">MLI</span><span class="tag">Hacheur</span></div></div>
+    </a>
+    <a class="card" href="#p-lego">
+      <div class="thumb"><span class="glyph">🧱</span></div>
+      <div class="body"><h3>Robot Lego</h3><p>Robot Lego programmé pour sortir d'un labyrinthe.</p>
+      <div class="tags"><span class="tag">Lego</span><span class="tag">Programmation</span></div></div>
+    </a>
+  </div>
+
+  <p class="group-title">BUT 1 · Semestre 1</p>
+  <div class="grid">
+    <a class="card" href="#p-escape">
+      <div class="thumb"><span class="glyph">🚧</span></div>
+      <div class="body"><h3>Escape Race</h3><p>Robot autonome qui évite les obstacles grâce à deux capteurs à ultrasons.</p>
+      <div class="tags"><span class="tag award">1er prix</span><span class="tag">Arduino</span><span class="tag">Ultrasons</span></div></div>
+    </a>
+    <a class="card" href="#p-thermo">
+      <div class="thumb"><span class="glyph">🌡️</span></div>
+      <div class="body"><h3>Thermomètre numérique</h3><p>Étude et réalisation complète d'un thermomètre à afficheurs 7 segments, en technologie traversante.</p>
+      <div class="tags"><span class="tag">Électronique</span><span class="tag">Prototype</span></div></div>
+    </a>
+  </div>
+</section>
+
+<!-- ================= PROJETS PERSONNELS ================= -->
+<section class="page" data-page="perso">
+  <h2 class="title">Projets personnels</h2>
+  <p class="lead">Ce que je fais en dehors des cours, parce que j'aime construire des objets qui marchent vraiment.</p>
+  <div class="grid">
+    <a class="card" href="#p-ipod">
+      <div class="thumb"><img src="assets/img/ipod-boitier.jpg" alt="Boîtier 3D du lecteur iPod"></div>
+      <div class="body"><h3>iPod OK Computer Edition</h3><p>Un iPod Classic refait de zéro sur ESP32-S3 : lecture MP3, pochettes, transfert de musique par WiFi.</p>
+      <div class="tags"><span class="tag">ESP32-S3</span><span class="tag">C++</span><span class="tag">PCB</span><span class="tag">CAO 3D</span></div></div>
+    </a>
+    <a class="card" href="#p-domostore">
+      <div class="thumb"><span class="glyph">🏠</span></div>
+      <div class="body"><h3>Domostore</h3><p>Projet de lycée : volet roulant connecté, piloté par Home Assistant et par un capteur de luminosité.</p>
+      <div class="tags"><span class="tag award">3e prix académique</span><span class="tag">ESP32</span><span class="tag">ESPHome</span></div></div>
+    </a>
+    <a class="card" href="#p-fablab">
+      <div class="thumb"><span class="glyph">🛠️</span></div>
+      <div class="body"><h3>FabLab de l'IUT</h3><p>Fabrication de PCB et d'impressions 3D pour mes projets et ceux des autres.</p>
+      <div class="tags"><span class="tag">PCB</span><span class="tag">Impression 3D</span></div></div>
+    </a>
+  </div>
+</section>
+
+<!-- ================= EXPÉRIENCE ================= -->
+<section class="page" data-page="experience">
+  <h2 class="title">Expérience et engagements</h2>
+  <p class="lead">Je n'ai pas encore fait de stage en entreprise. Voici les expériences qui m'ont appris à travailler avec les autres et à prendre des responsabilités.</p>
+
+  <div class="section">
+    <h3><span class="n">🏹</span>Encadrant fédéral de tir à l'arc · AS Poissy Tir à l'arc</h3>
+    <p><strong>Depuis septembre 2025 · bénévolat</strong> · Diplômé encadrant fédéral (FFTA)</p>
+    <ul>
+      <li>J'enseigne les bases techniques et les règles de sécurité du tir à l'arc à un groupe d'environ 10 archers en école de tir (niveau 1).</li>
+      <li>J'encadre un groupe de plus de 10 adultes et adolescents en développement et je suis leur progression.</li>
+    </ul>
+    <p><strong>Ce que j'en retire pour l'ingénierie :</strong> expliquer simplement quelque chose de technique, faire respecter des règles de sécurité sans exception, préparer une séance à l'avance et l'adapter en direct selon le groupe. C'est la même rigueur que pour préparer un protocole de test ou présenter un projet à l'oral.</p>
+    <p>Je pratique aussi en compétition (catégorie U21, arc classique) depuis 9 ans : champion des Yvelines Beursault U21 en 2026.</p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">📰</span>Autres engagements au lycée</h3>
+    <ul>
+      <li>Création et gestion de la rubrique Jeux vidéo et esport du journal du lycée Charles de Gaulle (Poissy) : écrire pour un public large et tenir un rythme de publication.</li>
+      <li>Élu lycéen : éco-délégué et membre du conseil d'administration de la Maison des lycéens.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">🍁</span>À venir</h3>
+    <ul>
+      <li>Janvier à avril 2027 : semestre d'échange au Cégep Édouard-Montpetit (Longueuil, Québec).</li>
+      <li>À partir de mi-juin 2027 : stage de 8 semaines minimum en électronique, systèmes embarqués ou IA.</li>
+      <li>Septembre 2027 : alternance en BUT 3.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CV ================= -->
+<section class="page" data-page="cv">
+  <h2 class="title">CV</h2>
+  <p class="lead">Mon CV à jour, au format PDF.</p>
+  <div class="cta" style="margin:0 0 28px"><a class="btn primary" href="assets/cv-nassim-belabed.pdf" download>⬇ Télécharger le CV (PDF)</a></div>
+
+  <p class="group-title">Formation</p>
+  <div class="section">
+    <p><strong>BUT Génie Électrique et Informatique Industrielle</strong>, parcours Électronique et systèmes embarqués<br>IUT de Vélizy-Rambouillet, UVSQ / Université Paris-Saclay · 2025-2028 · échange au S4 au Cégep Édouard-Montpetit (Québec)</p>
+    <p style="margin:0"><strong>Baccalauréat général</strong>, spécialités mathématiques et physique-chimie, option mathématiques expertes<br>Lycée Charles de Gaulle, Poissy · 2025</p>
+  </div>
+
+  <p class="group-title">Compétences techniques</p>
+  <div class="skills">
+    <div><h4>Systèmes embarqués</h4><p>ESP32 / ESP32-S3, Arduino, microcontrôleur 8051 en C, bus I2C, SPI, I2S, CAN</p></div>
+    <div><h4>Électronique</h4><p>Analogique et numérique, conception de PCB (KiCad), simulation LTspice, PSim, PSpice</p></div>
+    <div><h4>Logique programmable</h4><p>FPGA Xilinx (Basys 2, Spartan-3E), VHDL, ISE WebPack</p></div>
+    <div><h4>Automatisme</h4><p>Automates Schneider, Grafcet, Ladder, régulation PID</p></div>
+    <div><h4>Programmation</h4><p>C, C++, Python, Matlab, Scilab, LabVIEW, Git</p></div>
+    <div><h4>CAO et fabrication</h4><p>Fusion 360, SolidWorks, CadQuery, impression 3D, gravure de PCB</p></div>
+  </div>
+
+  <p class="group-title">Langues</p>
+  <div class="section"><p style="margin:0">Français : langue maternelle · Anglais : niveau B1</p></div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="page" data-page="contact">
+  <h2 class="title">Contact et réseaux</h2>
+  <p class="lead">Pour un stage, une alternance ou simplement échanger sur un projet.</p>
+  <ul class="contact-list" style="max-width:560px">
+    <li><a href="mailto:nassim78belabed@gmail.com"><span class="ic">@</span><span>nassim78belabed@gmail.com<small>Mail</small></span></a></li>
+    <li><a href="https://www.linkedin.com/in/nassim-belabed/" target="_blank" rel="noopener"><span class="ic">in</span><span>linkedin.com/in/nassim-belabed<small>LinkedIn</small></span></a></li>
+    <li><a href="https://github.com/nassim78belabed-gif" target="_blank" rel="noopener"><span class="ic">&lt;/&gt;</span><span>github.com/nassim78belabed-gif<small>GitHub : le code de mes projets</small></span></a></li>
+  </ul>
+</section>
+
+<!-- =========================================================
+     FICHES PROJETS
+     ========================================================= -->
+
+<!-- ---------- SAÉ 3.02 ultrasons ---------- -->
+<section class="page" data-page="p-ultrason">
+  <a class="back" href="#academiques">← Projets académiques</a>
+  <div class="fiche-head">
+    <span class="status">BUT 2 · Semestre 3 · SAÉ 3.02</span>
+    <h2>Mesure de distance par ultrasons</h2>
+    <p class="lead" style="margin:0">Concevoir une chaîne d'acquisition complète, du transducteur ultrasonore jusqu'à la mesure exploitable, en vue d'un système de positionnement en 2D.</p>
+    <div class="meta">
+      <div><small>Année</small><strong>BUT 2, semestre 3</strong></div>
+      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
+      <div><small>Groupe</small><strong><span class="todo">nombre d'étudiants</span></strong></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">1</span>La technologie mise en œuvre</h3>
+    <p>La télémétrie par ultrasons repose sur le <strong>temps de vol</strong> : un émetteur envoie une courte salve d'ultrasons, l'onde rebondit sur un obstacle et revient vers le récepteur. En mesurant le temps aller-retour <em>t</em>, on obtient la distance : <em>d = v × t / 2</em>, avec <em>v</em> ≈ 340 m/s dans l'air.</p>
+    <p>On retrouve cette technologie dans les radars de recul des voitures, la détection d'obstacles des robots et des drones, la mesure de niveau dans les cuves industrielles ou encore les sonars.</p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">2</span>Cahier des charges et objectifs</h3>
+    <ul>
+      <li>Générer un signal porteur à environ <strong>40 kHz</strong>, la fréquence de résonance du transducteur MA40S4S.</li>
+      <li>Émettre ce signal par <strong>salves</strong> (bursts) pour pouvoir mesurer le temps de vol.</li>
+      <li>Concevoir la carte émetteur / récepteur sous <strong>KiCad</strong>.</li>
+      <li>Rendre les livrables intermédiaires (A, B, C) puis le rapport final.</li>
+      <li><span class="todo">autres points du cahier des charges (précision, portée, traitement du signal reçu, positionnement 2D…)</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Résultats obtenus</h3>
+    <p>L'émission repose sur deux NE555P montés en cascade : <strong>U1</strong> génère la porteuse à 40 kHz et <strong>U3</strong> découpe cette porteuse en salves. Comprendre ce rôle de chaque timer a été le point clé pour dimensionner le circuit.</p>
+    <div class="gallery">
+      <figure><div class="ph">Schéma KiCad de l'émetteur</div><figcaption><span class="todo">capture du schéma KiCad</span></figcaption></figure>
+      <figure><div class="ph">Capture oscilloscope des salves à 40 kHz</div><figcaption><span class="todo">capture oscilloscope</span></figcaption></figure>
+    </div>
+    <p><span class="todo">mesures obtenues, bilan des objectifs atteints, difficultés et solutions</span></p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">4</span>Compétences techniques mises en œuvre</h3>
+    <ul>
+      <li>Dimensionnement de montages astables à NE555 (fréquence de la porteuse, durée des salves).</li>
+      <li>Saisie de schéma et conception de carte sous KiCad.</li>
+      <li>Notions de chaîne d'acquisition : capteur, conditionnement, conversion analogique-numérique, échantillonnage (théorème de Shannon, filtre anti-repliement).</li>
+      <li><span class="todo">tests réalisés et résultats</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">5</span>Compétences transverses</h3>
+    <ul>
+      <li>Respect d'un planning de livrables intermédiaires.</li>
+      <li><span class="todo">organisation du groupe, répartition des tâches, rédaction du rapport</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ---------- Cachan ---------- -->
+<section class="page" data-page="p-cachan">
+  <a class="back" href="#academiques">← Projets académiques</a>
+  <div class="fiche-head">
+    <span class="status">BUT 1 · Semestre 2 · SAÉ robotique</span>
+    <h2>L'oscillo bot · Rencontres Robotiques de Cachan</h2>
+    <p class="lead" style="margin:0">Un robot autonome de suivi de ligne, conçu en équipe pour la compétition nationale des IUT GEII à Cachan (11 au 13 juin 2026).</p>
+    <div class="meta">
+      <div><small>Année</small><strong>BUT 1, semestre 2</strong></div>
+      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
+      <div><small>Groupe</small><strong>3 étudiants</strong></div>
+      <div><small>Résultat</small><strong>7e sur 38 équipes</strong></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">1</span>Cahier des charges et objectifs</h3>
+    <p>Le robot doit suivre une ligne sur une piste et enchaîner des missions imposées : compter des marques au sol, s'arrêter au bon endroit, faire demi-tour, franchir des zones sans ligne, le tout le plus vite possible.</p>
+    <ul>
+      <li>Suivi de ligne précis à vitesse élevée.</li>
+      <li>Détection et comptage des traits latéraux, à gauche et à droite.</li>
+      <li>Enchaînement automatique des actions propres à chaque mission.</li>
+      <li>Fonctionnement sur piste noire sur fond blanc, ou l'inverse.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">2</span>Ce que fait le robot</h3>
+    <table>
+      <tr><th>Élément</th><th>Choix</th></tr>
+      <tr><td>Carte</td><td>Arduino Mega</td></tr>
+      <tr><td>Capteurs</td><td>Barrette infrarouge Pololu QTR-8RC (8 capteurs)</td></tr>
+      <tr><td>Motorisation</td><td>2 moteurs à courant continu commandés en MLI par un pont en H L298N</td></tr>
+      <tr><td>Commande</td><td>Régulation PID (proportionnel + dérivé) sur la position de la ligne</td></tr>
+    </table>
+    <p>Le programme décrit chaque parcours sous forme d'une <strong>« partition »</strong> : une liste d'étapes (nombre de traits à compter, côté, action, sens de rotation, temporisation, vitesse du tronçon) que le robot exécute dans l'ordre. Ajouter une mission revient à écrire une nouvelle partition, sans toucher au cœur du programme.</p>
+    <div class="gallery">
+      <figure><div class="ph">Photo du robot</div><figcaption><span class="todo">photo de L'oscillo bot</span></figcaption></figure>
+      <figure><div class="ph">Le robot sur la piste de Cachan</div><figcaption><span class="todo">photo ou vidéo en compétition</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Résultats obtenus</h3>
+    <div class="result"><strong>11 missions validées</strong> et <strong>7e place sur 38 équipes</strong> au classement général.</div>
+    <p><strong>Principales difficultés et solutions :</strong></p>
+    <ul>
+      <li><strong>Un trait compté deux fois</strong> : un trait n'est validé qu'après plusieurs lectures consécutives au-dessus du seuil, puis plus rien n'est compté tant que le capteur n'est pas sorti du trait.</li>
+      <li><strong>Pistes inversées</strong> (ligne blanche sur fond noir) : le robot détecte automatiquement le type de piste et adapte sa lecture.</li>
+      <li><strong>Changements de vitesse</strong> : un même réglage PID ne convient pas à toutes les vitesses, donc les coefficients sont adaptés à chaque tronçon.</li>
+      <li><strong>Sorties de piste</strong> : arrêt de sécurité si la ligne est perdue trop longtemps, et limitation de la correction.</li>
+      <li><strong>Une version par mission</strong> : 11 versions du programme écrites du 8 au 13 juin 2026, et des réglages faits en direct sur la piste pendant la compétition.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">4</span>Compétences techniques mises en œuvre</h3>
+    <ul>
+      <li>Calibration d'une barrette de capteurs infrarouges et choix des seuils de détection.</li>
+      <li>Réglage d'un correcteur PID par essais sur piste.</li>
+      <li>Commande de moteurs à courant continu en MLI via un pont en H.</li>
+      <li>Programmation en C/C++ (Arduino) avec une machine à états.</li>
+      <li>Méthode de test : un programme de « reconnaissance » pour compter les traits de la piste, puis la version de course réglée avec ce nombre.</li>
+      <li><span class="todo">ta partie personnelle dans le robot (code, câblage, mécanique…)</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">5</span>Compétences transverses</h3>
+    <ul>
+      <li><strong>Travail en équipe</strong> avec Yanni Kadir et Gerald Binet : partage du code et corrections faites ensemble.</li>
+      <li><strong>Gestion de la pression</strong> : modifier et retester le programme pendant les 3 jours de compétition.</li>
+      <li><strong>Communication</strong> : site web de présentation du projet avec les vidéos des missions (<a href="https://nassimbelabed.wixsite.com/sae-robotique" target="_blank" rel="noopener">voir le site</a>) et post LinkedIn.</li>
+    </ul>
+    <p><a href="https://github.com/nassim78belabed-gif/oscillo-bot" target="_blank" rel="noopener">Description du projet sur GitHub →</a></p>
+  </div>
+</section>
+
+<!-- ---------- SAÉ 2.01 FPGA ---------- -->
+<section class="page" data-page="p-fpga">
+  <a class="back" href="#academiques">← Projets académiques</a>
+  <div class="fiche-head">
+    <span class="status">BUT 1 · Semestre 2 · SAÉ 2.01</span>
+    <h2>Commande d'un moteur par FPGA</h2>
+    <p class="lead" style="margin:0">Faire varier la vitesse d'un moteur à courant continu avec une carte FPGA programmée en VHDL, mesurer cette vitesse et l'afficher.</p>
+    <div class="meta">
+      <div><small>Année</small><strong>BUT 1, semestre 2</strong></div>
+      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
+      <div><small>Groupe</small><strong>Binôme (avec Gerald Binet)</strong></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">1</span>Cahier des charges et objectifs</h3>
+    <ul>
+      <li>Étude énergétique du système.</li>
+      <li>Générer un signal MLI (PWM) à <strong>1 kHz</strong> à rapport cyclique variable, en VHDL, sur une carte Basys 2 (FPGA Spartan-3E, horloge 50 MHz).</li>
+      <li>Isoler la partie commande de la partie puissance avec un optocoupleur (4N35).</li>
+      <li>Piloter le moteur avec un hacheur (MOSFET IRFZ44N et diode de roue libre MBR1645).</li>
+      <li>Mesurer la vitesse de rotation (génératrice, comparateur LM393N) et l'afficher en tr/min sur les afficheurs 7 segments.</li>
+      <li>Réaliser l'asservissement de vitesse en boucle fermée.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">2</span>Résultats obtenus</h3>
+    <p>Chaque programme VHDL a été validé séparément sur la carte : génération MLI, mesure de vitesse, décodeur BCD vers 7 segments et affichage multiplexé sur 4 afficheurs.</p>
+    <table>
+      <tr><th>Rapport cyclique α</th><th>Vitesse théorique</th><th>Vitesse mesurée</th></tr>
+      <tr><td>0,5</td><td>1125 tr/min</td><td>≈ 1120 tr/min</td></tr>
+      <tr><td>0,2</td><td>450 tr/min</td><td>≈ 480 tr/min</td></tr>
+    </table>
+    <p><strong>Difficulté rencontrée :</strong> la sortie du comparateur était correcte, mais le second étage à optocoupleur, chargé d'adapter le signal de vitesse au niveau 3,3 V du FPGA, ne fonctionnait pas correctement (problème de dimensionnement ou de câblage sur l'alimentation). Sans ce signal propre, l'asservissement en boucle fermée n'a pas pu être finalisé. Nous l'avons expliqué honnêtement dans le compte rendu et à l'enseignant.</p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Compétences techniques mises en œuvre</h3>
+    <ul>
+      <li>VHDL : diviseur d'horloge, compteurs, génération MLI (seuil = α × 50 000 cycles pour une période de 1 ms), décodage BCD, multiplexage d'afficheurs.</li>
+      <li>Électronique de puissance : hacheur, rôle de la diode de roue libre, dimensionnement d'une résistance de puissance.</li>
+      <li>Isolation galvanique par optocoupleur.</li>
+      <li>Simulation sous LTspice et mesures à l'oscilloscope.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">4</span>Compétences transverses</h3>
+    <ul>
+      <li>Travail en binôme et rédaction d'un compte rendu technique complet.</li>
+      <li>Savoir présenter un résultat partiel avec honnêteté et analyser la cause d'un échec.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ---------- Robot Lego ---------- -->
+<section class="page" data-page="p-lego">
+  <a class="back" href="#academiques">← Projets académiques</a>
+  <div class="fiche-head">
+    <span class="status">BUT 1 · Semestre 2</span>
+    <h2>Robot Lego</h2>
+    <p class="lead" style="margin:0">Programmer un robot Lego pour qu'il sorte d'un labyrinthe.</p>
+    <div class="meta">
+      <div><small>Année</small><strong>BUT 1, semestre 2</strong></div>
+      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
+      <div><small>Groupe</small><strong><span class="todo">nombre d'étudiants</span></strong></div>
+    </div>
+  </div>
+  <div class="section"><h3><span class="n">1</span>Cahier des charges et objectifs</h3><p><span class="todo">ce que le robot devait faire, capteurs utilisés, contraintes</span></p></div>
+  <div class="section"><h3><span class="n">2</span>Résultats obtenus</h3><p><span class="todo">résultat, difficultés et solutions</span></p></div>
+  <div class="section"><h3><span class="n">3</span>Compétences techniques</h3><p><span class="todo">programmation, capteurs, tests</span></p></div>
+  <div class="section"><h3><span class="n">4</span>Compétences transverses</h3><p><span class="todo">travail d'équipe, organisation</span></p></div>
+</section>
+
+<!-- ---------- Escape Race ---------- -->
+<section class="page" data-page="p-escape">
+  <a class="back" href="#academiques">← Projets académiques</a>
+  <div class="fiche-head">
+    <span class="status">BUT 1 · Semestre 1 · SAÉ robotique</span>
+    <h2>Escape Race</h2>
+    <p class="lead" style="margin:0">Construire un robot mobile autonome, majoritairement à partir de matériaux recyclés, capable de sortir le plus vite possible d'une zone encombrée d'obstacles.</p>
+    <div class="meta">
+      <div><small>Année</small><strong>BUT 1, semestre 1</strong></div>
+      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
+      <div><small>Groupe</small><strong>4 étudiants</strong></div>
+      <div><small>Résultat</small><strong>1er prix</strong></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">1</span>Cahier des charges et objectifs</h3>
+    <ul>
+      <li>Robot entièrement autonome, sans télécommande.</li>
+      <li>Structure réalisée principalement avec des matériaux recyclés.</li>
+      <li>Détecter et éviter les obstacles et les murs d'un espace clos.</li>
+      <li>Sortir de la zone le plus rapidement possible.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">2</span>Fonctionnement du robot</h3>
+    <p>Deux roues entraînées par des servomoteurs à rotation continue, deux capteurs à ultrasons (un devant, un sur le côté gauche) et une carte Arduino. Le programme tourne en boucle sur trois cas, par ordre de priorité :</p>
+    <table>
+      <tr><th>Situation</th><th>Réaction</th></tr>
+      <tr><td>Obstacle à moins de 20 cm devant</td><td>Arrêt, marche arrière, puis rotation sur place pour repartir dans une autre direction</td></tr>
+      <tr><td>Mur à moins de 15 cm à gauche</td><td>La roue droite ralentit brièvement pour corriger la trajectoire, sans s'arrêter</td></tr>
+      <tr><td>Voie libre</td><td>Les deux roues à pleine vitesse</td></tr>
+    </table>
+    <div class="gallery">
+      <figure><div class="ph">Photo du robot</div><figcaption><span class="todo">photo du robot Escape Race</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Résultats obtenus</h3>
+    <div class="result"><strong>1er prix</strong> de l'Escape Race 2026 de l'IUT.</div>
+    <p><strong>Choix techniques du programme :</strong></p>
+    <ul>
+      <li>La mesure d'écho est limitée à 20 ms : sans écho, le programme ne reste pas bloqué et continue de rouler.</li>
+      <li>Corriger la trajectoire le long du mur sans s'arrêter fait gagner du temps par rapport à un arrêt systématique.</li>
+      <li>Une LED s'allume quand la tension d'alimentation de l'Arduino passe sous 4,7 V, mesurée en interne sans composant ajouté : on voit tout de suite quand l'alimentation faiblit.</li>
+    </ul>
+    <p><span class="todo">difficultés rencontrées pendant la construction et solutions</span></p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">4</span>Compétences techniques mises en œuvre</h3>
+    <ul>
+      <li>Mesure de distance par ultrasons : impulsion de déclenchement de 10 µs, mesure de la durée de l'écho, conversion en centimètres.</li>
+      <li>Commande de servomoteurs à rotation continue (sens et vitesse, roues montées en miroir).</li>
+      <li>Programmation Arduino (C/C++).</li>
+      <li><span class="todo">ta partie personnelle dans le groupe</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">5</span>Compétences transverses</h3>
+    <ul>
+      <li>Travail en équipe de 4.</li>
+      <li>Faire avec des moyens limités : réutiliser des matériaux de récupération.</li>
+      <li><span class="todo">répartition des tâches, présentation du projet</span></li>
+    </ul>
+    <p><a href="https://github.com/nassim78belabed-gif/escape-race" target="_blank" rel="noopener">Code du robot sur GitHub →</a></p>
+  </div>
+</section>
+
+<!-- ---------- Thermomètre ---------- -->
+<section class="page" data-page="p-thermo">
+  <a class="back" href="#academiques">← Projets académiques</a>
+  <div class="fiche-head">
+    <span class="status">BUT 1 · Semestre 1</span>
+    <h2>Thermomètre numérique</h2>
+    <p class="lead" style="margin:0">Étude et réalisation complète d'un thermomètre à afficheurs 7 segments, en technologie traversante.</p>
+    <div class="meta">
+      <div><small>Année</small><strong>BUT 1, semestre 1</strong></div>
+      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
+      <div><small>Groupe</small><strong><span class="todo">nombre d'étudiants</span></strong></div>
+    </div>
+  </div>
+  <div class="section"><h3><span class="n">1</span>Cahier des charges et objectifs</h3>
+    <ul>
+      <li>Produire l'analyse fonctionnelle du système.</li>
+      <li>Réaliser un prototype en composants traversants.</li>
+      <li><span class="todo">plage de température, capteur, précision attendue, affichage</span></li>
+    </ul>
+  </div>
+  <div class="section"><h3><span class="n">2</span>Résultats obtenus</h3>
+    <div class="gallery"><figure><div class="ph">Photo du thermomètre</div><figcaption><span class="todo">photo du prototype</span></figcaption></figure></div>
+    <p><span class="todo">bilan, difficultés et solutions</span></p>
+  </div>
+  <div class="section"><h3><span class="n">3</span>Compétences techniques</h3><p><span class="todo">test réalisé pour valider le prototype et résultat obtenu</span></p></div>
+  <div class="section"><h3><span class="n">4</span>Compétences transverses</h3><p><span class="todo">organisation, présentation</span></p></div>
+</section>
+
+<!-- ---------- iPod ---------- -->
+<section class="page" data-page="p-ipod">
+  <a class="back" href="#perso">← Projets personnels</a>
+  <div class="fiche-head">
+    <span class="status">Projet personnel · depuis 2026</span>
+    <h2>iPod OK Computer Edition</h2>
+    <p class="lead" style="margin:0">Un iPod Classic refait de zéro : lecteur MP3 sur carte SD, écran couleur 2,4", DAC audio et 6 boutons, pour environ 33 € de composants. Firmware, PCB et boîtier conçus de bout en bout.</p>
+    <div class="meta">
+      <div><small>Contexte</small><strong>Projet personnel</strong></div>
+      <div><small>Groupe</small><strong>Seul</strong></div>
+      <div><small>État</small><strong>Fonctionnel sur breadboard</strong></div>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <figure><img src="assets/img/ipod-boitier.jpg" alt="Boîtier en deux coques généré en CadQuery"><figcaption>Boîtier en deux coques, généré par script (CadQuery) à partir des cotes des PCB</figcaption></figure>
+    <figure><img src="assets/img/ipod-pcb-logique.jpg" alt="Routage du PCB de la carte logique"><figcaption>Carte logique : ESP32-S3, DAC et connecteurs vers l'écran et la façade</figcaption></figure>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">1</span>Objectifs</h3>
+    <ul>
+      <li>Lire des MP3 depuis une carte microSD avec une interface façon iPod : Artistes, Albums, Morceaux, Lecture en cours avec la pochette.</li>
+      <li>Une vraie sortie audio de qualité via un DAC externe.</li>
+      <li>Ajouter de la musique sans retirer la carte SD.</li>
+      <li>À terme, un objet portable sur batterie, dans son propre boîtier.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">2</span>Architecture matérielle</h3>
+    <table>
+      <tr><th>Composant</th><th>Rôle</th></tr>
+      <tr><td>ESP32-S3-DevKitC-1 N16R8</td><td>Microcontrôleur, 16 Mo de flash, 8 Mo de PSRAM</td></tr>
+      <tr><td>Écran ILI9341 2,4" (SPI)</td><td>Affichage 240 × 320, avec lecteur microSD intégré sur le même bus SPI</td></tr>
+      <tr><td>DAC PCM5102A (I2S)</td><td>Conversion numérique-analogique, sortie jack</td></tr>
+      <tr><td>6 boutons poussoirs</td><td>Navigation (pull-up interne, anti-rebond logiciel)</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Résultats obtenus</h3>
+    <div class="result">Firmware fonctionnel sur breadboard : navigation complète, lecture MP3 en I2S, pochettes, et <strong>transfert de musique par WiFi</strong> validé sur 25 fichiers (environ 0,3 Mo/s), avec rangement automatique d'après les tags ID3.</div>
+    <p><strong>Difficultés et solutions :</strong></p>
+    <ul>
+      <li><strong>Écran et carte SD sur le même bus SPI</strong> : l'écran ne libérait pas sa ligne de données et bloquait la SD. Solution : ne pas câbler le MISO de l'écran et toujours relâcher une puce avant d'activer l'autre.</li>
+      <li><strong>Broches interdites</strong> : avec la PSRAM octale du N16R8, les GPIO 26 à 37 sont réservés, donc j'ai refait tout le brochage.</li>
+      <li><strong>Plantage de la bibliothèque audio</strong> sur certains MP3 (division par zéro) : j'ai corrigé la bibliothèque et gardé une copie modifiée dans le projet.</li>
+      <li><strong>Le WiFi perturbait le son</strong> : il n'est allumé que dans le menu de transfert.</li>
+      <li><strong>Saturation du DAC</strong> au-delà d'un certain volume : volume plafonné.</li>
+    </ul>
+    <p><strong>Suite :</strong> corriger le PCB avant fabrication, ajouter la batterie LiPo et son chargeur.</p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">4</span>Compétences mises en œuvre</h3>
+    <ul>
+      <li>Bus SPI, I2S, gestion de la mémoire PSRAM sur ESP32-S3.</li>
+      <li>Conception de PCB en deux cartes (logique et façade boutons) avec leurs fichiers de fabrication.</li>
+      <li>CAO 3D d'un boîtier à partir des cotes des cartes.</li>
+      <li>Méthode de test : un programme de test dédié à chaque bloc (carte, SD, tags, écran, audio, boutons) avant de tout assembler.</li>
+      <li>Autonomie, recherche de documentation, gestion de version avec Git.</li>
+    </ul>
+    <p><a href="https://github.com/nassim78belabed-gif/ipod-ok-computer" target="_blank" rel="noopener">Projet complet sur GitHub →</a></p>
+  </div>
+</section>
+
+<!-- ---------- Domostore ---------- -->
+<section class="page" data-page="p-domostore">
+  <a class="back" href="#perso">← Projets personnels</a>
+  <div class="fiche-head">
+    <span class="status">Projet de lycée · Olympiades des Sciences de l'Ingénieur 2025</span>
+    <h2>Domostore</h2>
+    <p class="lead" style="margin:0">Un volet roulant connecté, commandé à distance depuis Home Assistant, qui s'ouvre et se ferme tout seul selon la luminosité.</p>
+    <div class="meta">
+      <div><small>Contexte</small><strong>Terminale, lycée Charles de Gaulle (Poissy)</strong></div>
+      <div><small>Groupe</small><strong><span class="todo">nombre d'élèves</span></strong></div>
+      <div><small>Résultat</small><strong>3e prix, finale académique de Versailles</strong></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">1</span>Objectifs</h3>
+    <ul>
+      <li>Piloter un volet roulant à distance (ouvrir, fermer, stop).</li>
+      <li>L'automatiser selon la luminosité : ouverture sous 1 000 lux, fermeture au-dessus de 20 000 lux.</li>
+      <li>L'intégrer dans un système domotique (Home Assistant).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">2</span>Ma partie</h3>
+    <p>J'ai réalisé seul toute la partie embarquée et domotique, ainsi que les impressions 3D. J'ai aussi aidé l'équipe sur la CAO, faite sous SolidWorks. Le prototype a été fabriqué au FabLab du lycée.</p>
+    <table>
+      <tr><th>Élément</th><th>Choix</th></tr>
+      <tr><td>Microcontrôleur</td><td>ESP32, configuré avec ESPHome</td></tr>
+      <tr><td>Moteur</td><td>Servomoteur FT90MR en rotation continue</td></tr>
+      <tr><td>Capteur</td><td>Luxmètre BH1750 en I2C</td></tr>
+      <tr><td>Supervision</td><td>Home Assistant, mises à jour sans fil (OTA)</td></tr>
+    </table>
+    <div class="gallery"><figure><div class="ph">Photo du prototype Domostore</div><figcaption><span class="todo">photo du prototype ou de la finale</span></figcaption></figure></div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Résultats et améliorations</h3>
+    <div class="result"><strong>3e prix</strong> de la finale académique de Versailles des Olympiades des Sciences de l'Ingénieur (mai 2025, à CentraleSupélec).</div>
+    <p>En reprenant le projet en 2026 pour le publier, la configuration a été corrigée : l'automatisme relançait le moteur toutes les minutes tant que la luminosité restait dans la même zone. Une commande n'est maintenant envoyée que si le volet n'est pas déjà dans la bonne position, et un nouvel ordre remplace proprement celui en cours.</p>
+    <p><a href="https://github.com/nassim78belabed-gif/domostore" target="_blank" rel="noopener">Configuration sur GitHub →</a></p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">4</span>Compétences mises en œuvre</h3>
+    <ul>
+      <li>Programmation d'un ESP32, bus I2C, commande d'un servomoteur en MLI.</li>
+      <li>Domotique : ESPHome, Home Assistant.</li>
+      <li>Impression 3D, CAO SolidWorks.</li>
+      <li>Travail en équipe sur un projet long, présentation devant un jury.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ---------- FabLab ---------- -->
+<section class="page" data-page="p-fablab">
+  <a class="back" href="#perso">← Projets personnels</a>
+  <div class="fiche-head">
+    <span class="status">IUT de Vélizy · depuis 2025</span>
+    <h2>FabLab de l'IUT</h2>
+    <p class="lead" style="margin:0">Le FabLab est l'endroit où je passe le plus de temps à l'IUT en dehors des cours.</p>
+  </div>
+  <div class="section">
+    <ul>
+      <li>Fabrication de nombreux PCB sur la graveuse LPKF ProtoMat, ce qui impose ses règles de conception (simple face, pistes de 0,8 mm minimum).</li>
+      <li>Impressions 3D pour mes projets et ceux d'autres étudiants.</li>
+      <li>Aide au fonctionnement du FabLab quand je peux.</li>
+    </ul>
+    <div class="gallery">
+      <figure><div class="ph">Un PCB gravé au FabLab</div><figcaption><span class="todo">photo d'un PCB que tu as fabriqué</span></figcaption></figure>
+      <figure><div class="ph">Une impression 3D</div><figcaption><span class="todo">photo d'une impression 3D</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="bar">
+    <span>© 2026 Nassim Belabed · BUT GEII, IUT de Vélizy-Rambouillet</span>
+    <span>Site réalisé avec l'aide d'un outil d'IA (Claude), contenus relus et validés par moi.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var pages = document.querySelectorAll('.page');
+  var navLinks = document.querySelectorAll('#nav a');
+  var parentOf = {
+    'p-ultrason': 'academiques', 'p-cachan': 'academiques', 'p-fpga': 'academiques',
+    'p-lego': 'academiques', 'p-escape': 'academiques', 'p-thermo': 'academiques',
+    'p-ipod': 'perso', 'p-domostore': 'perso', 'p-fablab': 'perso'
+  };
+  function show() {
+    var id = (location.hash || '#accueil').slice(1);
+    if (!document.querySelector('[data-page="' + id + '"]')) id = 'accueil';
+    pages.forEach(function (p) { p.classList.toggle('show', p.dataset.page === id); });
+    var tab = parentOf[id] || id;
+    navLinks.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + tab); });
+    var active = document.querySelector('#nav a.active');
+    var nav = document.getElementById('nav');
+    if (active) nav.scrollLeft = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    var h = document.querySelector('.page.show h2, .page.show h1');
+    document.title = (id === 'accueil' ? 'Nassim Belabed' : (h ? h.textContent : 'Nassim Belabed')) + ' · Portfolio GEII';
+  }
+  window.addEventListener('hashchange', show);
+  show();
+
+  var root = document.documentElement, btn = document.getElementById('theme');
+  try { var t = localStorage.getItem('theme'); if (t) root.setAttribute('data-theme', t); } catch (e) {}
+  btn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
