@@ -96,16 +96,6 @@
       <div class="body"><h3>L'oscillo bot · Concours de Cachan</h3><p>Robot suiveur de ligne en équipe de 3, régulation PID et séquenceur de missions.</p>
       <div class="tags"><span class="tag award">7e / 38</span><span class="tag">Arduino Mega</span><span class="tag">PID</span></div></div>
     </a>
-    <a class="card" href="#p-fpga">
-      <div class="thumb"><span class="glyph">⚙️</span></div>
-      <div class="body"><h3>Commande d'un moteur par FPGA</h3><p>SAÉ 2.01 : variation de vitesse d'un moteur à courant continu en VHDL sur Basys 2.</p>
-      <div class="tags"><span class="tag">VHDL</span><span class="tag">MLI</span><span class="tag">Hacheur</span></div></div>
-    </a>
-    <a class="card" href="#p-lego">
-      <div class="thumb"><span class="glyph">🧱</span></div>
-      <div class="body"><h3>Robot Lego</h3><p>Robot Lego programmé pour sortir d'un labyrinthe.</p>
-      <div class="tags"><span class="tag">Lego</span><span class="tag">Programmation</span></div></div>
-    </a>
   </div>
 
   <p class="group-title">BUT 1 · Semestre 1</p>
@@ -358,81 +348,6 @@
     </ul>
     <p><a href="https://github.com/nassim78belabed-gif/oscillo-bot" target="_blank" rel="noopener">Description du projet sur GitHub →</a></p>
   </div>
-</section>
-
-<!-- ---------- SAÉ 2.01 FPGA ---------- -->
-<section class="page" data-page="p-fpga">
-  <a class="back" href="#academiques">← Projets académiques</a>
-  <div class="fiche-head">
-    <span class="status">BUT 1 · Semestre 2 · SAÉ 2.01</span>
-    <h2>Commande d'un moteur par FPGA</h2>
-    <p class="lead" style="margin:0">Faire varier la vitesse d'un moteur à courant continu avec une carte FPGA programmée en VHDL, mesurer cette vitesse et l'afficher.</p>
-    <div class="meta">
-      <div><small>Année</small><strong>BUT 1, semestre 2</strong></div>
-      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
-      <div><small>Groupe</small><strong>Binôme (avec Gerald Binet)</strong></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h3><span class="n">1</span>Cahier des charges et objectifs</h3>
-    <ul>
-      <li>Étude énergétique du système.</li>
-      <li>Générer un signal MLI (PWM) à <strong>1 kHz</strong> à rapport cyclique variable, en VHDL, sur une carte Basys 2 (FPGA Spartan-3E, horloge 50 MHz).</li>
-      <li>Isoler la partie commande de la partie puissance avec un optocoupleur (4N35).</li>
-      <li>Piloter le moteur avec un hacheur (MOSFET IRFZ44N et diode de roue libre MBR1645).</li>
-      <li>Mesurer la vitesse de rotation (génératrice, comparateur LM393N) et l'afficher en tr/min sur les afficheurs 7 segments.</li>
-      <li>Réaliser l'asservissement de vitesse en boucle fermée.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h3><span class="n">2</span>Résultats obtenus</h3>
-    <p>Chaque programme VHDL a été validé séparément sur la carte : génération MLI, mesure de vitesse, décodeur BCD vers 7 segments et affichage multiplexé sur 4 afficheurs.</p>
-    <table>
-      <tr><th>Rapport cyclique α</th><th>Vitesse théorique</th><th>Vitesse mesurée</th></tr>
-      <tr><td>0,5</td><td>1125 tr/min</td><td>≈ 1120 tr/min</td></tr>
-      <tr><td>0,2</td><td>450 tr/min</td><td>≈ 480 tr/min</td></tr>
-    </table>
-    <p><strong>Difficulté rencontrée :</strong> la sortie du comparateur était correcte, mais le second étage à optocoupleur, chargé d'adapter le signal de vitesse au niveau 3,3 V du FPGA, ne fonctionnait pas correctement (problème de dimensionnement ou de câblage sur l'alimentation). Sans ce signal propre, l'asservissement en boucle fermée n'a pas pu être finalisé. Nous l'avons expliqué honnêtement dans le compte rendu et à l'enseignant.</p>
-  </div>
-
-  <div class="section">
-    <h3><span class="n">3</span>Compétences techniques mises en œuvre</h3>
-    <ul>
-      <li>VHDL : diviseur d'horloge, compteurs, génération MLI (seuil = α × 50 000 cycles pour une période de 1 ms), décodage BCD, multiplexage d'afficheurs.</li>
-      <li>Électronique de puissance : hacheur, rôle de la diode de roue libre, dimensionnement d'une résistance de puissance.</li>
-      <li>Isolation galvanique par optocoupleur.</li>
-      <li>Simulation sous LTspice et mesures à l'oscilloscope.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h3><span class="n">4</span>Compétences transverses</h3>
-    <ul>
-      <li>Travail en binôme et rédaction d'un compte rendu technique complet.</li>
-      <li>Savoir présenter un résultat partiel avec honnêteté et analyser la cause d'un échec.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ---------- Robot Lego ---------- -->
-<section class="page" data-page="p-lego">
-  <a class="back" href="#academiques">← Projets académiques</a>
-  <div class="fiche-head">
-    <span class="status">BUT 1 · Semestre 2</span>
-    <h2>Robot Lego</h2>
-    <p class="lead" style="margin:0">Programmer un robot Lego pour qu'il sorte d'un labyrinthe.</p>
-    <div class="meta">
-      <div><small>Année</small><strong>BUT 1, semestre 2</strong></div>
-      <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
-      <div><small>Groupe</small><strong><span class="todo">nombre d'étudiants</span></strong></div>
-    </div>
-  </div>
-  <div class="section"><h3><span class="n">1</span>Cahier des charges et objectifs</h3><p><span class="todo">ce que le robot devait faire, capteurs utilisés, contraintes</span></p></div>
-  <div class="section"><h3><span class="n">2</span>Résultats obtenus</h3><p><span class="todo">résultat, difficultés et solutions</span></p></div>
-  <div class="section"><h3><span class="n">3</span>Compétences techniques</h3><p><span class="todo">programmation, capteurs, tests</span></p></div>
-  <div class="section"><h3><span class="n">4</span>Compétences transverses</h3><p><span class="todo">travail d'équipe, organisation</span></p></div>
 </section>
 
 <!-- ---------- Escape Race ---------- -->
@@ -693,8 +608,8 @@
   var pages = document.querySelectorAll('.page');
   var navLinks = document.querySelectorAll('#nav a');
   var parentOf = {
-    'p-ultrason': 'academiques', 'p-cachan': 'academiques', 'p-fpga': 'academiques',
-    'p-lego': 'academiques', 'p-escape': 'academiques', 'p-thermo': 'academiques',
+    'p-ultrason': 'academiques', 'p-cachan': 'academiques',
+    'p-escape': 'academiques', 'p-thermo': 'academiques',
     'p-ipod': 'perso', 'p-domostore': 'perso', 'p-fablab': 'perso'
   };
   function show() {
