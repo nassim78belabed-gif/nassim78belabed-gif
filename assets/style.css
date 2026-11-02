@@ -188,6 +188,8 @@ footer .bar { height: auto; padding: 18px 16px; flex-wrap: wrap; justify-content
   .stats { grid-template-columns: 1fr; }
   .two { grid-template-columns: 1fr; }
   .section { padding: 18px 16px; }
+  table { font-size: 13.5px; }
+  th, td { padding: 6px 5px; overflow-wrap: anywhere; hyphens: auto; }
   .meta div { border-right: 0; border-bottom: 1px solid var(--line); }
   .meta div:last-child { border-bottom: 0; }
 }

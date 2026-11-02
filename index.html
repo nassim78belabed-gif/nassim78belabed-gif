@@ -106,7 +106,7 @@
       <div class="tags"><span class="tag award">1er prix</span><span class="tag">Arduino</span><span class="tag">Ultrasons</span></div></div>
     </a>
     <a class="card" href="#p-thermo">
-      <div class="thumb"><span class="glyph">🌡️</span></div>
+      <div class="thumb"><img src="assets/img/thermo-prototype.jpg" alt="Prototype du thermomètre sur plaque d\'essai"></div>
       <div class="body"><h3>Thermomètre numérique</h3><p>Étude et réalisation complète d'un thermomètre à afficheurs 7 segments, en technologie traversante.</p>
       <div class="tags"><span class="tag">Électronique</span><span class="tag">Prototype</span></div></div>
     </a>
@@ -435,28 +435,72 @@
 <section class="page" data-page="p-thermo">
   <a class="back" href="#academiques">← Projets académiques</a>
   <div class="fiche-head">
-    <span class="status">BUT 1 · Semestre 1</span>
+    <span class="status">BUT 1 · Semestre 1 · SAÉ 1.02</span>
     <h2>Thermomètre numérique</h2>
-    <p class="lead" style="margin:0">Étude et réalisation complète d'un thermomètre à afficheurs 7 segments, en technologie traversante.</p>
+    <p class="lead" style="margin:0">Étude et réalisation complète d'un thermomètre intérieur autonome à afficheurs 7 segments, en technologie traversante.</p>
     <div class="meta">
       <div><small>Année</small><strong>BUT 1, semestre 1</strong></div>
       <div><small>Durée</small><strong>Tout le semestre 1</strong></div>
       <div><small>Groupe</small><strong>Binôme</strong></div>
     </div>
   </div>
-  <div class="section"><h3><span class="n">1</span>Cahier des charges et objectifs</h3>
+
+  <div class="section">
+    <h3><span class="n">1</span>Cahier des charges et objectifs</h3>
     <ul>
+      <li>Mesurer la température ambiante de <strong>0&nbsp;°C à 60&nbsp;°C</strong>, au degré près.</li>
+      <li>Afficher la valeur de façon stable sur des afficheurs 7 segments.</li>
+      <li>Fonctionner sur une <strong>pile 9&nbsp;V</strong>, donc limiter la consommation.</li>
       <li>Produire l'analyse fonctionnelle du système.</li>
       <li>Réaliser un prototype en composants traversants.</li>
-      <li><span class="todo">plage de température, capteur, précision attendue, affichage</span></li>
     </ul>
   </div>
-  <div class="section"><h3><span class="n">2</span>Résultats obtenus</h3>
-    <div class="gallery"><figure><div class="ph">Photo du thermomètre</div><figcaption><span class="todo">photo du prototype</span></figcaption></figure></div>
-    <p><span class="todo">bilan, difficultés et solutions</span></p>
+
+  <div class="section">
+    <h3><span class="n">2</span>Fonctionnement</h3>
+    <p>Le signal passe par cinq étages, du capteur jusqu'à l'affichage :</p>
+    <table>
+      <tr><th>Étage</th><th>Composants</th><th>Rôle</th></tr>
+      <tr><td>Acquisition</td><td>Capteur LM335</td><td>Donne une tension proportionnelle à la température absolue</td></tr>
+      <tr><td>Conditionnement</td><td>3 AOP (LM324) + diode Zener</td><td>Amplificateur soustracteur : ramène 2,73&nbsp;V – 3,33&nbsp;V vers 0&nbsp;V – 5&nbsp;V</td></tr>
+      <tr><td>Numérisation</td><td>CAN ADC0804, horloge par NE555</td><td>Convertit 0&nbsp;V – 5&nbsp;V en un mot de 8 bits (0 à 255)</td></tr>
+      <tr><td>Transcodage</td><td>EEPROM AT28C64B</td><td>Table de conversion : l'octet du CAN sert d'adresse, la mémoire renvoie les codes BCD</td></tr>
+      <tr><td>Affichage</td><td>2 décodeurs HCT4511 + afficheurs à cathode commune</td><td>BCD vers 7 segments, avec des résistances qui limitent le courant pour préserver la pile</td></tr>
+    </table>
+    <div class="gallery">
+      <figure><img src="assets/img/thermo-architecture.jpg" alt="Schéma bloc : mesure, amplification, conversion analogique-numérique, transcodage, affichage"><figcaption>Architecture globale, avec les tensions à 0&nbsp;°C, 23&nbsp;°C et 60&nbsp;°C</figcaption></figure>
+    </div>
   </div>
-  <div class="section"><h3><span class="n">3</span>Compétences techniques</h3><p><span class="todo">test réalisé pour valider le prototype et résultat obtenu</span></p></div>
-  <div class="section"><h3><span class="n">4</span>Compétences transverses</h3><p><span class="todo">organisation, présentation</span></p></div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Résultats obtenus</h3>
+    <div class="result"><strong>Thermomètre fonctionnel</strong>, précis et autonome sur pile 9&nbsp;V.</div>
+    <div class="gallery"><figure><img src="assets/img/thermo-prototype.jpg" alt="Prototype du thermomètre câblé sur plaque d'essai, avec l'afficheur 7 segments"><figcaption>Le prototype câblé sur plaque d'essai (Labdec), étage par étage</figcaption></figure></div>
+    <p><strong>Principale difficulté et solution :</strong></p>
+    <ul>
+      <li><strong>Le décalage du capteur</strong> : à 0&nbsp;°C (273,15&nbsp;K), le LM335 sort déjà 2,73&nbsp;V. Pour afficher 0, on retire cette tension avec un amplificateur soustracteur, dont la référence est fixée par une diode Zener.</li>
+    </ul>
+    <p><strong>Pour aller plus loin :</strong> réaliser un circuit imprimé (PCB) pour rendre le thermomètre plus compact.</p>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">4</span>Compétences techniques</h3>
+    <ul>
+      <li>Chaîne d'acquisition complète : capteur, conditionnement, conversion analogique-numérique, affichage.</li>
+      <li>Lecture de datasheets et dimensionnement des composants (gain de l'amplificateur, résistances de limitation).</li>
+      <li>Programmation d'une mémoire EEPROM utilisée comme table de conversion.</li>
+      <li>Tests du prototype : linéarité du capteur vérifiée, gain de l'amplificateur validé par la mesure, table de conversion fonctionnelle, affichage stable et lisible.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">5</span>Compétences transverses</h3>
+    <ul>
+      <li>Montage par étapes : chaque étage câblé et testé avant de passer au suivant.</li>
+      <li>Présentation du projet sous forme de diaporama.</li>
+      <li><span class="todo">organisation du binôme, répartition des tâches</span></li>
+    </ul>
+  </div>
 </section>
 
 <!-- ---------- iPod ---------- -->
