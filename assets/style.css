@@ -159,6 +159,15 @@ th { font-weight: 700; color: var(--ink); font-size: 14px; border-bottom: 2px so
 }
 .todo::before { content: "✎ À compléter : "; }
 
+/* Les « À compléter » restent dans le HTML mais sont cachés sur le site public.
+   Pour les revoir, supprimer ce bloc. */
+.todo,
+li:has(> .todo:only-child),
+p:has(> .todo:only-child),
+.meta > div:has(.todo),
+.gallery figure:has(.ph),
+.gallery:not(:has(img)) { display: none; }
+
 /* ---------- divers ---------- */
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
