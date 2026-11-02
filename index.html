@@ -83,7 +83,7 @@
   <p class="group-title">BUT 2 · Semestre 3</p>
   <div class="grid">
     <a class="card" href="#p-ultrason">
-      <div class="thumb"><span class="glyph">📡</span></div>
+      <div class="thumb"><img src="assets/img/sae302-oscillo.jpg" alt="Oscillogramme des salves ultrasonores"></div>
       <div class="body"><h3>Mesure de distance par ultrasons</h3><p>SAÉ 3.02 : chaîne d'acquisition complète autour d'un émetteur-récepteur ultrasonore à 40 kHz.</p>
       <div class="tags"><span class="tag">NE555</span><span class="tag">KiCad</span><span class="tag">Acquisition</span></div></div>
     </a>
@@ -215,9 +215,9 @@
 <section class="page" data-page="p-ultrason">
   <a class="back" href="#academiques">← Projets académiques</a>
   <div class="fiche-head">
-    <span class="status">BUT 2 · Semestre 3 · SAÉ 3.02</span>
+    <span class="status">BUT 2 · Semestre 3 · SAÉ 3.02 · en cours</span>
     <h2>Mesure de distance par ultrasons</h2>
-    <p class="lead" style="margin:0">Concevoir une chaîne d'acquisition complète, du transducteur ultrasonore jusqu'à la mesure exploitable, en vue d'un système de positionnement en 2D.</p>
+    <p class="lead" style="margin:0">Concevoir une chaîne d'acquisition complète, du transducteur ultrasonore jusqu'à un signal exploitable, en vue d'un système de positionnement en 2D.</p>
     <div class="meta">
       <div><small>Année</small><strong>BUT 2, semestre 3</strong></div>
       <div><small>Durée</small><strong><span class="todo">durée</span></strong></div>
@@ -227,46 +227,82 @@
 
   <div class="section">
     <h3><span class="n">1</span>La technologie mise en œuvre</h3>
-    <p>La télémétrie par ultrasons repose sur le <strong>temps de vol</strong> : un émetteur envoie une courte salve d'ultrasons, l'onde rebondit sur un obstacle et revient vers le récepteur. En mesurant le temps aller-retour <em>t</em>, on obtient la distance : <em>d = v × t / 2</em>, avec <em>v</em> ≈ 340 m/s dans l'air.</p>
+    <p>La télémétrie par ultrasons repose sur le <strong>temps de vol</strong> : on envoie une courte salve d'ultrasons et on mesure le temps qu'elle met pour arriver. Dans notre montage, l'émetteur et le récepteur sont face à face, donc <em>t = d / v</em>, avec <em>v</em> ≈ 340&nbsp;m/s dans l'air, soit environ 2,94&nbsp;ms par mètre.</p>
     <p>On retrouve cette technologie dans les radars de recul des voitures, la détection d'obstacles des robots et des drones, la mesure de niveau dans les cuves industrielles ou encore les sonars.</p>
   </div>
 
   <div class="section">
     <h3><span class="n">2</span>Cahier des charges et objectifs</h3>
     <ul>
-      <li>Générer un signal porteur à environ <strong>40 kHz</strong>, la fréquence de résonance du transducteur MA40S4S.</li>
-      <li>Émettre ce signal par <strong>salves</strong> (bursts) pour pouvoir mesurer le temps de vol.</li>
-      <li>Concevoir la carte émetteur / récepteur sous <strong>KiCad</strong>.</li>
-      <li>Rendre les livrables intermédiaires (A, B, C) puis le rapport final.</li>
-      <li><span class="todo">autres points du cahier des charges (précision, portée, traitement du signal reçu, positionnement 2D…)</span></li>
+      <li>Générer un signal porteur à <strong>40&nbsp;kHz</strong>, la fréquence de résonance du transducteur MA40S4S.</li>
+      <li>Émettre ce signal par <strong>salves</strong> : en émission continue, on ne peut pas savoir quand l'onde est partie, donc on ne peut pas mesurer de temps de vol.</li>
+      <li>Côté récepteur : amplifier le signal reçu, détecter son front et le remettre au niveau 0/5&nbsp;V.</li>
+      <li>Concevoir les cartes émetteur et récepteur sous <strong>KiCad</strong>, puis les fabriquer.</li>
+      <li>Rendre les livrables intermédiaires puis le rapport final.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h3><span class="n">3</span>Résultats obtenus</h3>
-    <p>L'émission repose sur deux NE555P montés en cascade : <strong>U1</strong> génère la porteuse à 40 kHz et <strong>U3</strong> découpe cette porteuse en salves. Comprendre ce rôle de chaque timer a été le point clé pour dimensionner le circuit.</p>
+    <h3><span class="n">3</span>Fonctionnement</h3>
+    <p><strong>Émetteur :</strong> deux NE555 en astable, alimentés en +5&nbsp;V, avec <em>f = 1,44 / ((R<sub>A</sub> + 2R<sub>B</sub>) · C)</em>.</p>
+    <ul>
+      <li><strong>U1</strong> commande les salves (570&nbsp;Hz mesuré). Sa sortie va sur le RESET de U2.</li>
+      <li><strong>U2</strong> génère la porteuse à 40&nbsp;kHz envoyée au transducteur. Il n'oscille que quand U1 est à 1, ce qui découpe la porteuse en salves.</li>
+    </ul>
+    <p><strong>Récepteur :</strong> un TL082 alimenté en ±5&nbsp;V et un transistor.</p>
+    <ul>
+      <li><strong>U3A</strong> : amplificateur différentiel, G = R2 / R12 = 47&nbsp;k / 1&nbsp;k = 47.</li>
+      <li><strong>U3B</strong> : comparateur qui détecte le front, seuil ≈ 0,45&nbsp;V (pont R14 / R17).</li>
+      <li><strong>Q1</strong> (BC337) : remet le signal au niveau 0/5&nbsp;V (sortie sur le collecteur, signal inversé).</li>
+    </ul>
     <div class="gallery">
-      <figure><div class="ph">Schéma KiCad de l'émetteur</div><figcaption><span class="todo">capture du schéma KiCad</span></figcaption></figure>
-      <figure><div class="ph">Capture oscilloscope des salves à 40 kHz</div><figcaption><span class="todo">capture oscilloscope</span></figcaption></figure>
+      <figure><img src="assets/img/sae302-schema-emetteur.png" alt="Schéma KiCad de l'émetteur : deux NE555 et le transducteur MA40S4S"><figcaption>Schéma KiCad de l'émetteur (certaines valeurs de composants ne sont plus à jour)</figcaption></figure>
+      <figure><img src="assets/img/sae302-schema-recepteur.png" alt="Schéma KiCad du récepteur : TL082 en amplificateur et comparateur, transistor BC337"><figcaption>Schéma KiCad du récepteur (certaines valeurs de composants ne sont plus à jour)</figcaption></figure>
     </div>
-    <p><span class="todo">mesures obtenues, bilan des objectifs atteints, difficultés et solutions</span></p>
   </div>
 
   <div class="section">
-    <h3><span class="n">4</span>Compétences techniques mises en œuvre</h3>
+    <h3><span class="n">4</span>Résultats obtenus</h3>
+    <div class="result"><strong>L'émetteur et le récepteur fonctionnent</strong>, et les cartes sont réalisées. Il reste à mesurer le retard en fonction de la distance et à ajouter un 2<sup>e</sup> étage d'amplification.</div>
+    <div class="gallery">
+      <figure><img src="assets/img/sae302-oscillo.jpg" alt="Oscillogramme : en jaune la commande des salves, en bleu le signal reçu amplifié"><figcaption>En jaune, la commande des salves (570&nbsp;Hz). En bleu, le signal reçu après l'ampli (8&nbsp;V crête à crête)</figcaption></figure>
+      <figure><img src="assets/img/sae302-courbe.png" alt="Courbe de l'amplitude du signal reçu en fonction de la distance"><figcaption>Amplitude du signal reçu en fonction de la distance (1 à 14&nbsp;cm)</figcaption></figure>
+    </div>
+    <p><strong>Amplitude en sortie du 1<sup>er</sup> étage (U3A) selon la distance :</strong></p>
+    <table>
+      <tr><th>Distance (cm)</th><td>1</td><td>3</td><td>5</td><td>6</td><td>7</td><td>9</td><td>11</td><td>14</td></tr>
+      <tr><th>Amplitude (V)</th><td>20</td><td>19,6</td><td>18,6</td><td>15</td><td>11,4</td><td>8,4</td><td>7,4</td><td>6,2</td></tr>
+    </table>
+    <p>L'amplitude baisse avec la distance, et pas de façon linéaire : à partir de 7&nbsp;cm, amplitude × distance ≈ 80&nbsp;V·cm, donc elle décroît en 1/d. À 1&nbsp;m, on estime le signal à environ 0,8&nbsp;V : c'est trop faible pour la détection de front, d'où le besoin d'un 2<sup>e</sup> étage d'amplification.</p>
+    <p><strong>Problèmes rencontrés et solutions :</strong></p>
     <ul>
-      <li>Dimensionnement de montages astables à NE555 (fréquence de la porteuse, durée des salves).</li>
-      <li>Saisie de schéma et conception de carte sous KiCad.</li>
+      <li><strong>Faux contacts sur la plaque d'essai</strong> (Labdec) pendant les essais.</li>
+      <li><strong>Premier PCB émetteur sans plan de masse</strong> : la carte double face a été gravée sans plan de masse (un oubli), puis corrigée.</li>
+    </ul>
+    <div class="gallery">
+      <figure><img src="assets/img/sae302-labdec.jpg" alt="Montage sur plaque d'essai avec le transducteur et les circuits intégrés"><figcaption>Sur plaque d'essai : l'émetteur, et une ancienne version du récepteur (sans ampli)</figcaption></figure>
+      <figure><img src="assets/img/sae302-pcb-emetteur-v1.jpg" alt="Les deux faces du premier PCB émetteur, sans plan de masse"><figcaption>Premier PCB émetteur, les deux faces (sans plan de masse)</figcaption></figure>
+      <figure><img src="assets/img/sae302-pcb-recepteur.jpg" alt="PCB du récepteur gravé, avec les noms Nassim Belabed et Yanni Kadir"><figcaption>PCB du récepteur</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">5</span>Compétences techniques mises en œuvre</h3>
+    <ul>
+      <li>Dimensionnement de montages astables à NE555 (fréquence de la porteuse, fréquence des salves).</li>
+      <li>Conditionnement d'un signal faible : amplificateur différentiel, comparateur à seuil, mise à niveau logique par transistor.</li>
+      <li>Saisie de schéma et routage sous KiCad, fabrication de PCB double face.</li>
+      <li>Mesures à l'oscilloscope et relevé de l'amplitude en fonction de la distance, puis analyse de la courbe.</li>
       <li>Notions de chaîne d'acquisition : capteur, conditionnement, conversion analogique-numérique, échantillonnage (théorème de Shannon, filtre anti-repliement).</li>
-      <li><span class="todo">tests réalisés et résultats</span></li>
     </ul>
   </div>
 
   <div class="section">
-    <h3><span class="n">5</span>Compétences transverses</h3>
+    <h3><span class="n">6</span>Compétences transverses</h3>
     <ul>
-      <li>Respect d'un planning de livrables intermédiaires.</li>
-      <li><span class="todo">organisation du groupe, répartition des tâches, rédaction du rapport</span></li>
+      <li>Respect d'un planning de livrables intermédiaires (comptes rendus et schémas rendus à chaque étape).</li>
+      <li>Rédaction des comptes rendus à deux, avec Yanni Kadir.</li>
+      <li><span class="todo">organisation du binôme, répartition des tâches</span></li>
     </ul>
   </div>
 </section>
