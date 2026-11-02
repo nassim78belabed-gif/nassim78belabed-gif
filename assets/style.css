@@ -138,7 +138,6 @@ h2.title + .lead, .fiche-head h2 + .lead { margin-top: 16px; }
 .section { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; margin-bottom: 18px; }
 .section h3 { margin: 0 0 12px; font-size: 22px; display: flex; align-items: baseline; gap: 10px; }
 .section h3 .n { color: var(--accent); font-family: "JetBrains Mono", monospace; font-size: 16px; flex: none; }
-.section h3 .n::after { content: "."; }
 .section p { margin: 0 0 10px; }
 .section ul { margin: 0 0 10px; padding-left: 22px; }
 .section li { margin-bottom: 6px; }

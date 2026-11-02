@@ -120,7 +120,7 @@
   <div class="grid">
     <a class="card" href="#p-ipod">
       <div class="thumb"><img src="assets/img/ipod-boitier.jpg" alt="Boîtier 3D du lecteur iPod"></div>
-      <div class="body"><h3>iPod OK Computer Edition</h3><p>Un iPod Classic refait de zéro sur ESP32-S3 : lecture MP3, pochettes, transfert de musique par WiFi.</p>
+      <div class="body"><h3>iPod OK Computer Edition</h3><p>Un iPod Classic refait de zéro sur ESP32-S3 : lecture MP3, pochettes, transfert de musique par Wi-Fi.</p>
       <div class="tags"><span class="tag">ESP32-S3</span><span class="tag">C++</span><span class="tag">PCB</span><span class="tag">CAO 3D</span></div></div>
     </a>
     <a class="card" href="#p-domostore">
@@ -148,7 +148,7 @@
       <li>J'enseigne les bases techniques et les règles de sécurité du tir à l'arc à un groupe d'environ 10 archers en école de tir (niveau 1).</li>
       <li>J'encadre un groupe de plus de 10 adultes et adolescents en développement et je suis leur progression.</li>
     </ul>
-    <p><strong>Ce que j'en retire pour l'ingénierie :</strong> expliquer simplement quelque chose de technique, faire respecter des règles de sécurité sans exception, préparer une séance à l'avance et l'adapter en direct selon le groupe. C'est la même rigueur que pour préparer un protocole de test ou présenter un projet à l'oral.</p>
+    <p><strong>Ce que ça m'apporte pour l'ingénierie :</strong> expliquer simplement quelque chose de technique, faire respecter des règles de sécurité sans exception, préparer une séance à l'avance et l'adapter en direct selon le groupe. C'est la même rigueur que pour préparer un protocole de test ou présenter un projet à l'oral.</p>
     <p>Je pratique aussi en compétition (catégorie U21, arc classique) depuis 9 ans : champion des Yvelines Beursault U21 en 2026.</p>
   </div>
 
@@ -552,7 +552,7 @@
     <div class="meta">
       <div><small>Contexte</small><strong>Projet personnel</strong></div>
       <div><small>Groupe</small><strong>Seul</strong></div>
-      <div><small>État</small><strong>Fonctionnel sur breadboard</strong></div>
+      <div><small>État</small><strong>Fonctionnel sur plaque d'essai</strong></div>
     </div>
   </div>
 
@@ -584,13 +584,13 @@
 
   <div class="section">
     <h3><span class="n">3</span>Résultats obtenus</h3>
-    <div class="result">Firmware fonctionnel sur breadboard : navigation complète, lecture MP3 en I2S, pochettes, et <strong>transfert de musique par WiFi</strong> validé sur 25 fichiers (environ 0,3 Mo/s), avec rangement automatique d'après les tags ID3.</div>
+    <div class="result">Firmware fonctionnel sur plaque d'essai : navigation complète, lecture MP3 en I2S, pochettes, et <strong>transfert de musique par Wi-Fi</strong> validé sur 25 fichiers (environ 0,3 Mo/s), avec rangement automatique d'après les tags ID3.</div>
     <p><strong>Difficultés et solutions :</strong></p>
     <ul>
       <li><strong>Écran et carte SD sur le même bus SPI</strong> : l'écran ne libérait pas sa ligne de données et bloquait la SD. Solution : ne pas câbler le MISO de l'écran et toujours relâcher une puce avant d'activer l'autre.</li>
       <li><strong>Broches interdites</strong> : avec la PSRAM octale du N16R8, les GPIO 26 à 37 sont réservés, donc j'ai refait tout le brochage.</li>
       <li><strong>Plantage de la bibliothèque audio</strong> sur certains MP3 (division par zéro) : j'ai corrigé la bibliothèque et gardé une copie modifiée dans le projet.</li>
-      <li><strong>Le WiFi perturbait le son</strong> : il n'est allumé que dans le menu de transfert.</li>
+      <li><strong>Le Wi-Fi perturbait le son</strong> : il n'est allumé que dans le menu de transfert.</li>
       <li><strong>Saturation du DAC</strong> au-delà d'un certain volume : volume plafonné.</li>
     </ul>
     <p><strong>Suite :</strong> corriger le PCB avant fabrication, ajouter la batterie LiPo et son chargeur.</p>
@@ -643,7 +643,7 @@
       <tr><td>Supervision</td><td>Home Assistant, mises à jour sans fil (OTA)</td></tr>
     </table>
     <p>En équipe, on a aussi mesuré les pertes thermiques à la caméra thermique et comparé le coût du volet à celui des produits concurrents.</p>
-    <div class="gallery"><figure><img src="assets/img/domostore-finale.jpg" alt="Remise des prix de la finale académique des Olympiades des Sciences de l'Ingénieur à Versailles"><figcaption>Remise des prix de la finale académique, Versailles, 6 mai 2025</figcaption></figure><figure><img src="assets/img/domostore-presentation.jpg" alt="Page de couverture de la présentation du projet Domostore"><figcaption>Couverture de la présentation du projet</figcaption></figure><figure><img src="assets/img/domostore-equipe.jpg" alt="Diapositive « Qui sommes-nous ? » avec le rôle de chaque membre de l'équipe"><figcaption>L'équipe et le rôle de chacun (moi : impression 3D et électronique)</figcaption></figure><figure><img src="assets/img/domostore-camera-thermique.jpg" alt="Mesures à la caméra thermique sur les fenêtres du lycée"><figcaption>Mesures à la caméra thermique sur les fenêtres du lycée</figcaption></figure></div>
+    <div class="gallery"><figure><img src="assets/img/domostore-finale.jpg" alt="Remise des prix de la finale académique des Olympiades des Sciences de l'Ingénieur à Versailles"><figcaption>Remise des prix de la finale académique de Versailles, 6 mai 2025</figcaption></figure><figure><img src="assets/img/domostore-presentation.jpg" alt="Page de couverture de la présentation du projet Domostore"><figcaption>Couverture de la présentation du projet</figcaption></figure><figure><img src="assets/img/domostore-equipe.jpg" alt="Diapositive « Qui sommes-nous ? » avec le rôle de chaque membre de l'équipe"><figcaption>L'équipe et le rôle de chacun (moi : impression 3D et électronique)</figcaption></figure><figure><img src="assets/img/domostore-camera-thermique.jpg" alt="Mesures à la caméra thermique sur les fenêtres du lycée"><figcaption>Mesures à la caméra thermique sur les fenêtres du lycée</figcaption></figure></div>
   </div>
 
   <div class="section">
