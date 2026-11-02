@@ -40,7 +40,7 @@
       <h1>Nassim Belabed</h1>
       <p>Je suis en 2e année de BUT Génie Électrique et Informatique Industrielle, parcours <strong>Électronique et systèmes embarqués</strong>, à l'IUT de Vélizy-Rambouillet (Université Paris-Saclay).</p>
       <p>Ce qui me plaît, c'est le matériel : concevoir une carte, la fabriquer et la voir fonctionner. Je fabrique des PCB et des pièces imprimées en 3D au FabLab de l'IUT, et je mène des projets personnels autour de l'ESP32, comme un lecteur MP3 façon iPod. En parallèle, je me forme en autodidacte à l'intelligence artificielle (agents IA, LLM).</p>
-      <p>De janvier à avril 2027, je pars en échange au <strong>Cégep Édouard-Montpetit</strong> (Longueuil, Québec). À mon retour, je recherche un <strong>stage de 8 semaines minimum à partir de mi-juin 2027</strong>, puis une <strong>alternance en BUT 3 dès septembre 2027</strong>, en électronique, systèmes embarqués ou IA.</p>
+      <p>De janvier à début juin 2027, je pars en échange au <strong>Cégep Édouard-Montpetit</strong> (Longueuil, Québec). À mon retour, je recherche un <strong>stage de 8 semaines minimum à partir de mi-juin 2027</strong>, puis une <strong>alternance en BUT 3 dès septembre 2027</strong>, en électronique, systèmes embarqués ou IA.</p>
       <div class="cta">
         <a class="btn primary" href="#academiques">Voir mes projets</a>
         <a class="btn" href="assets/cv-nassim-belabed.pdf" download>Télécharger mon CV</a>
@@ -149,7 +149,7 @@
       <li>J'encadre un groupe de plus de 10 adultes et adolescents en développement et je suis leur progression.</li>
     </ul>
     <p><strong>Ce que ça m'apporte pour l'ingénierie :</strong> expliquer simplement quelque chose de technique, faire respecter des règles de sécurité sans exception, préparer une séance à l'avance et l'adapter en direct selon le groupe. C'est la même rigueur que pour préparer un protocole de test ou présenter un projet à l'oral.</p>
-    <p>Je pratique aussi en compétition (catégorie U21, arc classique) depuis 9 ans : champion des Yvelines Beursault U21 en 2026.</p>
+    <p>Je pratique aussi en compétition (catégorie U21, arc classique) depuis 9 ans : champion des Yvelines Beursault U21 en avril 2026 et 1er U21 au championnat régional universitaire en décembre 2025.</p>
   </div>
 
   <div class="section">
@@ -163,7 +163,7 @@
   <div class="section">
     <h3><span class="n">🍁</span>À venir</h3>
     <ul>
-      <li>Janvier à avril 2027 : semestre d'échange au Cégep Édouard-Montpetit (Longueuil, Québec).</li>
+      <li>Janvier à début juin 2027 : semestre d'échange au Cégep Édouard-Montpetit (Longueuil, Québec).</li>
       <li>À partir de mi-juin 2027 : stage de 8 semaines minimum en électronique, systèmes embarqués ou IA.</li>
       <li>Septembre 2027 : alternance en BUT 3.</li>
     </ul>
@@ -463,7 +463,7 @@
     <ul>
       <li>Travail en équipe de 4, avec Abdou Ndiaye, Luc Sharawi et Gerald Binet. Je me suis occupé de la partie technique du robot.</li>
       <li>Faire avec des moyens limités : réutiliser des matériaux de récupération.</li>
-      <li><span class="todo">rôle des autres membres, présentation du projet</span></li>
+      <li><span class="todo">Rôle des autres membres, présentation du projet</span></li>
     </ul>
     <p><a href="https://github.com/nassim78belabed-gif/escape-race" target="_blank" rel="noopener">Code du robot sur GitHub →</a><br>
     <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7433865373462147072/" target="_blank" rel="noopener">Vidéo du projet (post LinkedIn d'Abdou Ndiaye) →</a></p>
@@ -537,7 +537,7 @@
     <ul>
       <li>Montage par étapes : chaque étage câblé et testé avant de passer au suivant.</li>
       <li>Présentation du projet sous forme de diaporama.</li>
-      <li><span class="todo">organisation du binôme, répartition des tâches</span></li>
+      <li><span class="todo">Organisation du binôme, répartition des tâches</span></li>
     </ul>
   </div>
 </section>
@@ -548,7 +548,7 @@
   <div class="fiche-head">
     <span class="status">Projet personnel · depuis 2026</span>
     <h2>iPod OK Computer Edition</h2>
-    <p class="lead" style="margin:0">Un iPod Classic refait de zéro : lecteur MP3 sur carte SD, écran couleur 2,4", DAC audio et 6 boutons, pour environ 33 € de composants. Firmware, PCB et boîtier conçus de bout en bout.</p>
+    <p class="lead" style="margin:0">Un iPod Classic refait de zéro : lecteur MP3 sur carte SD, écran couleur 2,4", DAC audio et 6 boutons, pour environ 33 € de composants. J'ai câblé et validé le montage, conçu le PCB et le boîtier. Le firmware est développé avec l'aide de Claude Code.</p>
     <div class="meta">
       <div><small>Contexte</small><strong>Projet personnel</strong></div>
       <div><small>Groupe</small><strong>Seul</strong></div>
@@ -589,7 +589,7 @@
     <ul>
       <li><strong>Écran et carte SD sur le même bus SPI</strong> : l'écran ne libérait pas sa ligne de données et bloquait la SD. Solution : ne pas câbler le MISO de l'écran et toujours relâcher une puce avant d'activer l'autre.</li>
       <li><strong>Broches interdites</strong> : avec la PSRAM octale du N16R8, les GPIO 26 à 37 sont réservés, donc j'ai refait tout le brochage.</li>
-      <li><strong>Plantage de la bibliothèque audio</strong> sur certains MP3 (division par zéro) : j'ai corrigé la bibliothèque et gardé une copie modifiée dans le projet.</li>
+      <li><strong>Plantage de la bibliothèque audio</strong> sur certains MP3 (division par zéro) : la bibliothèque a été corrigée, et une copie modifiée est gardée dans le projet.</li>
       <li><strong>Le Wi-Fi perturbait le son</strong> : il n'est allumé que dans le menu de transfert.</li>
       <li><strong>Saturation du DAC</strong> au-delà d'un certain volume : volume plafonné.</li>
     </ul>
