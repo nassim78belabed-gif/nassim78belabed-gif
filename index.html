@@ -107,7 +107,7 @@
       <div class="tags"><span class="tag award">1er prix</span><span class="tag">Arduino</span><span class="tag">Ultrasons</span></div></div>
     </a>
     <a class="card" href="#p-thermo">
-      <div class="thumb"><img src="assets/img/thermo-prototype.jpg" alt="Prototype du thermomètre sur plaque d\'essai"></div>
+      <div class="thumb"><img src="assets/img/thermo-prototype.jpg" alt="Prototype du thermomètre sur plaque d'essai"></div>
       <div class="body"><h3>Thermomètre numérique</h3><p>Étude et réalisation complète d'un thermomètre à afficheurs 7 segments, en technologie traversante.</p>
       <div class="tags"><span class="tag">Électronique</span><span class="tag">Prototype</span></div></div>
     </a>
@@ -361,7 +361,7 @@
     <p><strong>Problèmes rencontrés et solutions :</strong></p>
     <ul>
       <li><strong>Faux contacts sur la plaque d'essai</strong> (Labdec) pendant les essais.</li>
-      <li><strong>Premier PCB émetteur sans plan de masse</strong> : la carte double face a été gravée sans plan de masse (un oubli), puis corrigée.</li>
+      <li><strong>Premier PCB émetteur sans plan de masse</strong> : la carte double face a été gravée sans plan de masse (un oubli), puis corrigée. L'émetteur a ensuite été refait en simple face.</li>
     </ul>
     <div class="gallery">
       <figure><img loading="lazy" decoding="async" src="assets/img/sae302-labdec.jpg" alt="Montage sur plaque d'essai avec le transducteur et les circuits intégrés"><figcaption>Sur plaque d'essai : l'émetteur, et une ancienne version du récepteur (sans ampli)</figcaption></figure>
@@ -376,9 +376,8 @@
     <ul>
       <li>Dimensionnement de montages astables à NE555 (fréquence de la porteuse, fréquence des salves).</li>
       <li>Conditionnement d'un signal faible : amplificateur différentiel, comparateur à seuil, mise à niveau logique par transistor.</li>
-      <li>Saisie de schéma et routage sous KiCad, fabrication de PCB double face.</li>
+      <li>Saisie de schéma et routage sous KiCad, fabrication de PCB (double face, puis simple face).</li>
       <li>Mesures à l'oscilloscope et relevé de l'amplitude en fonction de la distance, puis analyse de la courbe.</li>
-      <li>Notions de chaîne d'acquisition : capteur, conditionnement, conversion analogique-numérique, échantillonnage (théorème de Shannon, filtre anti-repliement).</li>
     </ul>
   </div>
 
@@ -755,6 +754,7 @@
     <p>J'ai raconté cette journée de finale dans le n°17 du journal du lycée, avec Paul-Arthur et Ethan M. : article « Olympiades de SI », accompagné d'un podcast.</p>
     <div class="gallery"><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/arche-olympiades-si.jpg" alt="Page de l'article Olympiades de SI dans le journal du lycée"><figcaption>L'article « Olympiades de SI », L'Arche n°17, mai 2025</figcaption></figure></div>
     <p>En reprenant le projet en 2026 pour le publier, la configuration a été corrigée : l'automatisme relançait le moteur toutes les minutes tant que la luminosité restait dans la même zone. Une commande n'est maintenant envoyée que si le volet n'est pas déjà dans la bonne position, et un nouvel ordre remplace proprement celui en cours.</p>
+    <p>Le prototype a fonctionné lors des Olympiades en 2025. La configuration de 2026 n'a pas été retestée sur le matériel, qui a été réutilisé pour d'autres projets.</p>
     <div class="links"><a class="btn primary" href="https://github.com/nassim78belabed-gif/domostore" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Configuration sur GitHub</a></div>
   </div>
 
@@ -779,7 +779,7 @@
   </div>
   <div class="section">
     <ul>
-      <li>Fabrication de nombreux PCB sur la graveuse LPKF ProtoMat, ce qui impose ses règles de conception (simple face, pistes de 0,8 mm minimum).</li>
+      <li>Fabrication de nombreux PCB sur la graveuse LPKF ProtoMat, ce qui impose ses règles de conception (simple ou double face, pistes de 0,8 mm minimum).</li>
       <li>Impressions 3D pour mes projets et ceux d'autres étudiants.</li>
       <li>Aide au fonctionnement du FabLab quand je peux.</li>
     </ul>
