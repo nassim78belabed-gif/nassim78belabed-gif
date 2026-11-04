@@ -726,16 +726,26 @@
   </div>
 
   <div class="section">
-    <h3><span class="n">1</span>Objectifs</h3>
+    <h3><span class="n">1</span>Le besoin et les objectifs</h3>
+    <p>Le point de départ : notre lycée est mal isolé et perd sa chaleur par ses fenêtres à simple vitrage, ce qui donne des salles trop froides ou trop chaudes. Domostore est un volet extérieur de type persienne qui doit garder la chaleur en hiver et protéger du soleil pour éviter la surchauffe.</p>
     <ul>
-      <li>Piloter un volet roulant à distance (ouvrir, fermer, stop).</li>
-      <li>L'automatiser selon la luminosité : ouverture sous 1 000 lux, fermeture au-dessus de 20 000 lux.</li>
-      <li>L'intégrer dans un système domotique (Home Assistant).</li>
+      <li>Réaliser un prototype en modèle réduit.</li>
+      <li>Piloter le volet à distance : ouvrir, fermer, stop.</li>
+      <li>L'automatiser selon la luminosité : ouvert sous 1 000 lux, fermé au-dessus de 20 000 lux. Entre les deux, le projet présenté au jury prévoyait d'orienter les lattes selon la position du soleil.</li>
+      <li>L'intégrer dans un système domotique, Home Assistant.</li>
+      <li>Constater un gain en efficacité énergétique.</li>
     </ul>
+    <div class="gallery"><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-besoin.png" alt="Diagramme du besoin du volet Domostore"><figcaption>Diagramme du besoin</figcaption></figure></div>
   </div>
 
   <div class="section">
-    <h3><span class="n">2</span>Ma partie</h3>
+    <h3><span class="n">2</span>La conception du volet, en équipe</h3>
+    <p>Chaque latte associe de l'aluminium 5086, résistant et durable, et 2&nbsp;cm de mousse de polyuréthane rigide, très isolante&nbsp;: sa conductivité thermique est de 0,025&nbsp;W·m<sup>-1</sup>·K<sup>-1</sup>, contre 126&nbsp;W·m<sup>-1</sup>·K<sup>-1</sup> pour l'aluminium. L'équipe a vérifié la résistance d'une latte par simulation sous SolidWorks.</p>
+    <div class="gallery"><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-lattes.jpg" alt="Diapositive sur la composition des lattes"><figcaption>Composition d'une latte : aluminium 5086 et mousse de polyuréthane</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-simulation-1.jpg" alt="Simulation SolidWorks de la déformation d'une latte"><figcaption>Simulation SolidWorks de la résistance d'une latte</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-simulation-2.jpg" alt="Deuxième vue de la simulation SolidWorks d'une latte"><figcaption>Simulation SolidWorks, autre vue</figcaption></figure></div>
+  </div>
+
+  <div class="section">
+    <h3><span class="n">3</span>Ma partie</h3>
     <p>J'ai réalisé seul toute la partie embarquée et domotique, ainsi que les impressions 3D. J'ai aussi aidé l'équipe sur la CAO, faite sous SolidWorks. Le prototype a été fabriqué au FabLab du lycée.</p>
     <table>
       <tr><th>Élément</th><th>Choix</th></tr>
@@ -745,26 +755,28 @@
       <tr><td>Supervision</td><td>Home Assistant, mises à jour sans fil (OTA)</td></tr>
     </table>
     <p>En équipe, on a aussi mesuré les pertes thermiques à la caméra thermique et comparé le coût du volet à celui des produits concurrents.</p>
-    <div class="gallery"><figure><img loading="lazy" decoding="async" src="assets/img/domostore-finale.jpg" alt="Remise des prix de la finale académique des Olympiades des Sciences de l'Ingénieur à Versailles"><figcaption>Remise des prix de la finale académique de Versailles, 6 mai 2025</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-presentation.jpg" alt="Page de couverture de la présentation du projet Domostore"><figcaption>Couverture de la présentation du projet</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-equipe.jpg" alt="Diapositive « Qui sommes-nous ? » avec le rôle de chaque membre de l'équipe"><figcaption>L'équipe et le rôle de chacun (moi : impression 3D et électronique)</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-camera-thermique.jpg" alt="Mesures à la caméra thermique sur les fenêtres du lycée"><figcaption>Mesures à la caméra thermique sur les fenêtres du lycée</figcaption></figure></div>
+    <p>Le schéma de la présentation montre l'architecture&nbsp;: l'ESP32 relié à Home Assistant, avec un accès à distance par Nabu Casa, la commande depuis un téléphone et par Alexa.</p>
+    <div class="gallery"><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-architecture.jpg" alt="Schéma de l'architecture domotique : ESP32, Home Assistant, Nabu Casa, téléphone, Alexa"><figcaption>L'architecture domotique</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-schema-esp32.png" alt="Schéma électronique du montage domotique autour de l'ESP32"><figcaption>Schéma électronique du montage, autour de l'ESP32</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-camera-thermique.jpg" alt="Mesures à la caméra thermique sur les fenêtres du lycée"><figcaption>Mesures à la caméra thermique sur les fenêtres du lycée</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-equipe.jpg" alt="Diapositive Qui sommes-nous avec le rôle de chaque membre de l'équipe"><figcaption>L'équipe et le rôle de chacun</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/domostore-presentation.jpg" alt="Page de couverture de la présentation du projet Domostore"><figcaption>Couverture de la présentation du projet</figcaption></figure></div>
   </div>
 
   <div class="section">
-    <h3><span class="n">3</span>Résultats et améliorations</h3>
+    <h3><span class="n">4</span>Résultats et améliorations</h3>
     <div class="result"><strong>3e prix</strong> de la finale académique de Versailles des Olympiades des Sciences de l'Ingénieur (mai 2025, à CentraleSupélec).</div>
     <p>J'ai raconté cette journée de finale dans le n°17 du journal du lycée, avec Paul-Arthur et Ethan M. : article « Olympiades de SI », accompagné d'un podcast.</p>
-    <div class="gallery"><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/arche-olympiades-si.jpg" alt="Page de l'article Olympiades de SI dans le journal du lycée"><figcaption>L'article « Olympiades de SI », L'Arche n°17, mai 2025</figcaption></figure></div>
+    <div class="gallery"><figure><img loading="lazy" decoding="async" src="assets/img/domostore-finale.jpg" alt="Remise des prix de la finale académique des Olympiades des Sciences de l'Ingénieur à CentraleSupélec"><figcaption>Remise des prix de la finale académique, CentraleSupélec, 6 mai 2025</figcaption></figure><figure><img loading="lazy" decoding="async" class="doc" src="assets/img/arche-olympiades-si.jpg" alt="Page de l'article Olympiades de SI dans le journal du lycée"><figcaption>L'article « Olympiades de SI », L'Arche n°17, mai 2025</figcaption></figure></div>
     <p>En reprenant le projet en 2026 pour le publier, la configuration a été corrigée : l'automatisme relançait le moteur toutes les minutes tant que la luminosité restait dans la même zone. Une commande n'est maintenant envoyée que si le volet n'est pas déjà dans la bonne position, et un nouvel ordre remplace proprement celui en cours.</p>
     <p>Le prototype a fonctionné lors des Olympiades en 2025. La configuration de 2026 n'a pas été retestée sur le matériel, qui a été réutilisé pour d'autres projets.</p>
     <div class="links"><a class="btn primary" href="https://github.com/nassim78belabed-gif/domostore" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Configuration sur GitHub</a></div>
   </div>
 
   <div class="section">
-    <h3><span class="n">4</span>Compétences mises en œuvre</h3>
+    <h3><span class="n">5</span>Compétences mises en œuvre</h3>
     <ul>
       <li>Programmation d'un ESP32, bus I2C, commande d'un servomoteur en MLI.</li>
       <li>Domotique : ESPHome, Home Assistant.</li>
       <li>Impression 3D, CAO SolidWorks.</li>
-      <li>Travail en équipe sur un projet long, présentation devant un jury.</li>
+      <li>Travail en équipe sur un projet long, avec des rôles répartis : Corentin aux schémas, Rémi à la modélisation 3D, Ihab à la caméra thermique et en soutien, moi à l'impression 3D et à l'électronique.</li>
+      <li>Présentation devant trois jurys lors de la finale académique.</li>
     </ul>
   </div>
 </section>
